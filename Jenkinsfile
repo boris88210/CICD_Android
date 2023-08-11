@@ -1,14 +1,10 @@
 pipeline{
-//     agent {
-//         docker {
-//             image 'docker pull allbears/jenkins-android:1.0.1' //①
-//         }
-//     }
+    agent none
     stages {
         stage('Build'){
              steps {
-                sh './gradlew clean && rm -rf ./app/build/' //②
-                sh './gradlew assembleRelease'  //③
+                sh './gradlew clean && rm -rf ./app/build/'
+                sh './gradlew assembleDebug'
              }
         }
 
