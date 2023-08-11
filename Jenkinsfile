@@ -1,7 +1,7 @@
 pipeline{
     agent {
         docker {
-            image 'allbears/jenkins-android:1.0.1' //①
+            image 'docker pull allbears/jenkins-android:1.0.1' //①
         }
     }
     stages {
