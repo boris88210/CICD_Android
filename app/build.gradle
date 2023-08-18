@@ -18,13 +18,13 @@ android {
     }
 
     buildTypes {
+        String inputFromJenkins = System.getenv('InputParam')
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
-            String inputFromJenkins = System.getenv('InputParam')
-            buildConfigField("String", "inputFromJenkins", inputFromJenkins?:'"From Jenkiins Parameter"')
+            buildConfigField("String", "inputFromJenkins", inputFromJenkins ?: '"From Jenkiins Parameter"')
         }
     }
     compileOptions {
