@@ -22,6 +22,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        debug {
+            String inputFromJenkins = System.getenv('BuildVariants')
+            buildConfigField("String", "inputFromJenkins", inputFromJenkins?:'""')
+        }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
