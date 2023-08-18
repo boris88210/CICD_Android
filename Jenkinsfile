@@ -11,12 +11,11 @@ pipeline{
                 sh './gradlew assembleDebug'
              }
         }
-    }
-    stage('Archive') {
-        steps {
-            archiveArtifacts artifacts: 'app/build/outputs/**/*.apk', fingerprint: true
+        stage('Archive') {
+            steps {
+                archiveArtifacts artifacts: 'app/build/outputs/**/*.apk', fingerprint: true
+           }
         }
+
     }
-
-
 }
