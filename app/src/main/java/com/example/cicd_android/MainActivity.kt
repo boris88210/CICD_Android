@@ -12,6 +12,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val tv = findViewById<TextView>(R.id.tv_hello)
-        tv.text = BuildConfig.inputFromJenkins
+        tv.text = BuildConfig.inputFromJenkins.toString()
     }
 }
