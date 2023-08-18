@@ -30,6 +30,16 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    android.applicationVariants.all { variant ->
+        if (variant.buildType.name == "debug") {
+            variant.outputs.all {
+                String inputFromJenkins = System.getenv('BuildVariants')
+                println('BuildVariants = ' + inputFromJenkins)
+                outputFileName = "${inputFromJenkins}_CICD_${defaultConfig.versionName}.apk"
+            }
+        }
+
+    }
 }
 
 dependencies {
