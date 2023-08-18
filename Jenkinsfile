@@ -6,13 +6,17 @@ pipeline{
     }
     stages {
         stage('Build'){
-
              steps {
                 sh './gradlew clean'
                 sh './gradlew assembleDebug'
              }
         }
-
     }
+    stage('Archive') {
+        steps {
+            archiveArtifacts artifacts: 'app/build/outputs/**/*.apk', fingerprint: true
+        }
+    }
+
 
 }
