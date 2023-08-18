@@ -23,7 +23,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
-            String inputFromJenkins = System.getenv('InputParam')
+            String inputFromJenkins = System.getenv('BuildVariants')
             buildConfigField("String", "inputFromJenkins", inputFromJenkins?:'"From Jenkiins Parameter"')
         }
     }
