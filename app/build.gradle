@@ -24,7 +24,7 @@ android {
         }
         debug {
             String inputFromJenkins = System.getenv('InputParam')
-            buildConfigField("String", "inputFromJenkins", inputFromJenkins?:'""')
+            buildConfigField("String", "inputFromJenkins", inputFromJenkins?:'"From Jenkiins Parameter"')
         }
     }
     compileOptions {

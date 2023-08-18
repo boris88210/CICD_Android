@@ -8,7 +8,7 @@ pipeline{
         stage('Build'){
              steps {
                 sh './gradlew clean'
-                sh './gradlew assemble${params.BuildVariants}'
+                sh './gradlew assembleDebug'
              }
         }
         stage('Archive') {
